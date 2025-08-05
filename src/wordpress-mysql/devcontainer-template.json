@@ -1,0 +1,24 @@
+{
+    "id": "wordpress-mysql",
+    "version": "1.0.0",
+    "name": "WordPress & MySQL",
+    "description": "A development container for WordPress with a MySQL database, WP-CLI, and Xdebug.",
+    "documentationURL": "https://github.com/Jacques-Murray/devcontainer-templates",
+    "options": {
+        "imageVariant": {
+            "type": "string",
+            "description": "Select the PHP version for the WordPress image.",
+            "proposals": [
+                "latest",
+                "php8.2",
+                "php8.1"
+            ],
+            "default": "latest"
+        },
+        "installNode": {
+            "type": "boolean",
+            "description": "Install Node.js and npm for theme/plugin development.",
+            "default": false
+        }
+    }
+}

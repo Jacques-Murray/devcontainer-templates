@@ -1,0 +1,22 @@
+{
+    "name": "WordPress Development Environment",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "wordpress",
+    "workspaceFolder": "/var/www/html",
+    "portsAttributes": {
+        "8000": {
+            "label": "WordPress",
+            "onAutoForward": "openBrowser"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "bmewburn.vscode-intelephense-client",
+                "xdebug.php-debug"
+            ]
+        }
+    },
+    "postCreateCommand": "chown -R www-data:www-data /var/www/html/wp-content"
+}

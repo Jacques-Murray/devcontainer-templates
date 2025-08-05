@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: wordpress_db
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+    restart: unless-stopped
+
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VARIANT: "${templateOption:imageVariant}"
+        INSTALL_NODE: "${templateOption:installNode}"
+    container_name: wordpress_app
+    depends_on:
+      - db
+    ports:
+      - "8000:80"
+    volumes:
+      - ../../:/var/www/html/wp-content/
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_DB_NAME: ${DB_NAME}
+    restart: unless-stopped
+
+volumes:
+  db_data:
