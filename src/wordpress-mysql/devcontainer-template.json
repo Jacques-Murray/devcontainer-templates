@@ -4,6 +4,7 @@
     "name": "WordPress & MySQL",
     "description": "A development container for WordPress with a MySQL database, WP-CLI, and Xdebug.",
     "documentationURL": "https://github.com/Jacques-Murray/devcontainer-templates",
+    "licenseURL": "https://github.com/Jacques-Murray/devcontainer-templates/blob/main/LICENSE",
     "options": {
         "imageVariant": {
             "type": "string",
