@@ -170,4 +170,4 @@ WORDPRESS_DB_NAME=wordpress
 
 ## License
 
-[MIT](LICENSE) (or specify your license here)
+[MIT](LICENSE)
