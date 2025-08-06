@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "name": "WordPress & MySQL",
     "description": "A development container for WordPress with a MySQL database, WP-CLI, and Xdebug.",
-    "documentationURL": "https://github.com/Jacques-Murray/devcontainer-templates",
+    "documentationURL": "https://github.com/Jacques-Murray/devcontainer-templates/tree/main/src/wordpress-mysql",
     "licenseURL": "https://github.com/Jacques-Murray/devcontainer-templates/blob/main/LICENSE",
     "options": {
         "imageVariant": {
@@ -21,5 +21,8 @@
             "description": "Install Node.js and npm for theme/plugin development.",
             "default": false
         }
-    }
+    },
+    "platforms": [
+        "Any"
+    ]
 }
