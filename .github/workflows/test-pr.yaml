@@ -16,6 +16,7 @@ jobs:
                 wordpress-mysql: ./**/wordpress-mysql/**
 
   test:
+    if: ${{ fromJson(needs.detect-changes.outputs.templates) != '[]' }}
     needs: [detect-changes]
     runs-on: ubuntu-latest
     continue-on-error: true
